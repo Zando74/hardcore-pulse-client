@@ -1,5 +1,7 @@
 package value_object
 
+import "slices"
+
 type MapID int 
 
 type InvalidMapIDError struct {}
@@ -24,7 +26,7 @@ var ValidMapIds = []int{
 }
 
 func NewMapID(value int) (*MapID, error) {
-	if value < 1411 || value > 1458 {
+	if !slices.Contains(ValidMapIds, value) {
 		return nil, &InvalidMapIDError{}
 	}
 	mapID := MapID(value)
