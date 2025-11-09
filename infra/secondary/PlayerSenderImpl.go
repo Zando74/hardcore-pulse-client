@@ -16,7 +16,7 @@ import (
 
 
 const (
-	BACKEND_URL = "http://localhost:3000/players"
+	BACKEND_URL = "https://hardcore-pulse.com/api/players"
 	API_KEY = "DfLHO9cnozarqVgFBASiFAhson6quObK"
 	AES_KEY = "bxuXHNFuZMXgW9A3WDwk8XIbhvvvquRi"
 )
