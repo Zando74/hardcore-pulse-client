@@ -8,6 +8,8 @@ import (
 	"os"
 	"time"
 
+	_ "embed"
+
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
@@ -15,6 +17,9 @@ import (
 	"fyne.io/fyne/v2/widget"
 	"fyne.io/systray"
 )
+
+//go:embed icon.ico
+var iconData []byte
 
 type App struct {
 	App        fyne.App
@@ -50,6 +55,8 @@ func (a *App) Run() {
             time.Sleep(100 * time.Millisecond)
         }
     }()
+
+	a.Window.SetIcon(fyne.NewStaticResource("icon.ico", iconData))
 
 	a.Window.ShowAndRun()
 }
@@ -158,6 +165,7 @@ func NewApp() *App {
 func onReady() {
     systray.SetTitle("Deathlog Tracker")
     systray.SetTooltip("Deathlog Tracker")
+	systray.SetIcon(iconData)
 
     mShow := systray.AddMenuItem("Open", "Open the window")
     mQuit := systray.AddMenuItem("Quit", "Quit the application")
