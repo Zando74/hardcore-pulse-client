@@ -21,6 +21,8 @@ var ValidRaces = []string{
 	"Tauren",
 	"Gnome",
 	"Troll",
+	"Draenei",
+	"Blood Elf",
 }
 
 func NewPlayerRace(value string) (*PlayerRace, error) {

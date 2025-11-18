@@ -13,7 +13,7 @@ func (e *InvalidPlayerLevelError) Error() string {
 }
 
 func NewPlayerLevel(value int) (*PlayerLevel, error) {
-	if value >= 1 && value <= 60 {
+	if value >= 1 && value <= 70 {
 		level := PlayerLevel(value)
 		return &level, nil
 	}

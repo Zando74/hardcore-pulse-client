@@ -41,6 +41,8 @@ var RaceNames = map[int]string{
 	6: "Tauren",
 	7: "Gnome",
 	8: "Troll",
+	10: "Blood Elf",
+	11: "Draenei",
 }
 
 func (d *DeathRecord) GetXPos() float32 {
@@ -68,7 +70,7 @@ func (d *DeathRecord) GetRaceName() string {
 }
 
 func (d *DeathRecord) GetFactionName() string {
-	if d.RaceID == 2 || d.RaceID == 5 || d.RaceID == 6 || d.RaceID == 8 {
+	if d.RaceID == 2 || d.RaceID == 5 || d.RaceID == 6 || d.RaceID == 8 || d.RaceID == 10 {
 		return "Horde"
 	}
 	return "Alliance"
